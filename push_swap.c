@@ -10,27 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void guardar_stack_en_archivo(int *stack_a, int size_a)
+{
+    FILE *archivo = fopen("stack_ordenado.txt", "w");  // 📂 Abrimos archivo en modo escritura
+
+    if (!archivo)  // ❌ Si el archivo no se puede abrir, mostramos un error
+    {
+        //perror("Error al abrir el archivo");
+        return;
+    }
+
+    for (int i = 0; i < size_a; i++)  // 🔄 Guardamos cada número en el archivo
+    {
+        fprintf(archivo, "%d\n", stack_a[i]);
+    }
+
+    fclose(archivo);  // 📌 Cerramos el archivo
+    //printf("✅ Stack ordenado guardado en 'stack_ordenado.txt'\n");
+}
 
 int main(int argc, char *argv[])
 {
-	if (argc ==  1)
+	if (argc ==  2)
 		return (1);
-    if (argc <= 2)
-	{
-		printf("Error");
-		return (1);
-	}
-    int i;
     int control;
+    int *stack_a;
+    int *stack_b;
+    t_conteo conteo;
     
-    i = argc;
-    control = control_duplicados(argv, argc);
+    control = 1;
+    control = dimensiones_int(argc, argv);
     if (control == 0)
-    {
-        printf("Error");
         return(1);
-    }
-        
-    
-    printf("%s", argv[i -1]);
+    stack_a = alocacion_memoria(argc, argv);
+    stack_b = alocacion_memoria2(argc);
+    control = control_numeros(argc, argv);
+    if (control == 0)
+        return(1);
+    control = control_duplicados(stack_a, argc);
+    if (control == 0)
+        return(1);
+    base_push_swap(stack_a, stack_b, argc, &conteo);
+    int i = 0;
+    free(stack_a);
+    free(stack_b);
 }

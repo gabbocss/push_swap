@@ -26,7 +26,19 @@
 # include <stdlib.h>
 # include <stdint.h> 
 # include <stdarg.h>
-
+#include <limits.h>
+typedef struct s_conteo
+{
+    int size_a;
+    int size_b;
+    int rra_min;
+    int rra_max;
+    int rrb_min;
+    int rrb_max;
+    int num_min;
+    int num_max;
+} t_conteo;
+ 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -71,4 +83,42 @@ int	ft_printf_numero_hex(unsigned int num, char c);
 int	ft_printf_putnbr(long long num);
 int	ft_printf_numeros_dos_cifras(long long num);
 int	ft_putchar(char c);
+int control_duplicados(int *stack1, int argc);
+int *alocacion_memoria(int argc, char *argv[]);
+int *alocacion_memoria2(int argc);
+int	ft_numero_minimo(int *stack_a, int argc);
+int control_numeros(int argc, char *argv[]);
+int	ft_atoi2(const char *nptr);
+int	ft_atoi3(const char *nptr);
+int	dimensiones_int(int argc, char *argv[]);
+void    base_push_swap(int *stack_a, int *stack_b, int argc, t_conteo *conteo);
+void    sa(int *stack_a, int *size_a);
+void    sb(int *stack_b, int size_b);
+void    ss(int *stack_a, int *stack_b, int size_a, int size_b);
+void	pb(int *stack_a, int *stack_b, t_conteo *conteo);
+void	pa(int *stack_a, int *stack_b, t_conteo *conteo);
+void    ra(int *stack_a, int size_a);
+void    rb(int *stack_b, int size_b);
+void    rr(int *stack_a, int *stack_b, int size_a, int size_b);
+void	rrr(int *stack_a, int *stack_b, t_conteo *conteo);
+void	rrb(int *stack_b, int size_b);
+void    rra(int *stack_a, int size_a);
+void	recolocacion_a_stack_a(int *stack_a, int *stack_b, int size_b);
+void    control_minimo(int *stack_a, int *stack_b, int *numero_minimo, int *size_a, int *size_b);
+void    control_0_1(int *stack_a, int *stack_b, int *numero_minimo, int *size_a, int* size_b);
+void    guardar_stack_en_archivo(int *stack_a, int size_a);
+void    control_posicion_minimo(int *stack_a, int *size_a, int numero_minimo);
+void    rra(int *stack_a, int size_a);
+void	posicionar_minimo(int *stack_a, int *size_a, int posicion_minimo, int n);
+int	ft_numero_maximo(int *stack_a, int argc);
+void	posicionamiento(int *stack_a, int *stack_b, t_conteo *conteo);
+int    numero_movimientos_min(int *stack_a, int *stack_b, t_conteo *conteo);
+int    numero_movimientos_max(int *stack_a, int *stack_b, t_conteo *conteo);
+void posicionamiento_min(int *stack_a, int *stack_b, t_conteo *conteo);
+void posicionamiento_max(int *stack_a, int *stack_b, t_conteo *conteo);
+int	movimientos_a_realizar_stack_a_min(int *stack, t_conteo *conteo);
+int movimientos_a_realizar_stack_b_min(int *stack_b, t_conteo *conteo);
+int	movimientos_a_realizar_stack_a_max(int *stack_a, t_conteo *conteo);
+int movimientos_a_realizar_stack_b_max(int *stack_b, t_conteo *conteo);
+
 #endif
