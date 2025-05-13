@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cabeceralib.h                                      :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inbauman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 12:42:35 by inbauman          #+#    #+#             */
-/*   Updated: 2024/11/18 12:44:50 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/12 14:37:14 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 # include <stdlib.h>
 # include <stdint.h> 
 # include <stdarg.h>
-
+#include <limits.h>
+ 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -71,4 +72,5 @@ int	ft_printf_numero_hex(unsigned int num, char c);
 int	ft_printf_putnbr(long long num);
 int	ft_printf_numeros_dos_cifras(long long num);
 int	ft_putchar(char c);
+
 #endif

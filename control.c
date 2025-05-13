@@ -6,30 +6,66 @@
 /*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:28:46 by inbauman          #+#    #+#             */
-/*   Updated: 2025/02/19 15:29:04 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/12 17:18:06 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int control_duplicados2(const char *s1, const char *s2)
+#include "libft.h"
+#include "push_swap.h"
+int ft_numero_minimo(int *stack_a, int argc)
 {
+	
 	int i;
-	const unsigned char	*us1;
-	const unsigned char	*us2;
+	int min;
 
-	us1 = (const unsigned char *)s1;
-	us2 = (const unsigned char *)s2;
 	i = 0;
-	while (us1[i] != '\0' && us2[i] != '\0')
+	min = stack_a[0];
+	while(i < argc)
 	{
-		if (us1[i] != us2[i])
-			return (1);
+		if (stack_a[i] < min)
+			min = stack_a[i];
 		i++;
 	}
-	return (0);
+	return(min);
+}
+int ft_numero_maximo(int *stack_a, int argc)
+{
+	
+	int i;
+	int max;
+
+	i = 0;
+	max = stack_a[0];
+	while(i < argc)
+	{
+		if (stack_a[i] > max)
+			max = stack_a[i];
+		i++;
+	}
+	return(max);
 }
 
-int control_duplicados(char *argv[], int argc)
+int control_numeros(int argc, char *argv[])
+{
+	int control;
+	int i;
+
+	i = 1;
+	control = 1;
+	while(i <= argc -1)
+	{
+		control = ft_atoi2(argv[i]);
+		if (control == 0)
+		{
+			ft_printf("Error numeros");
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int control_duplicados(int *stack1, int argc)
 {
 	
     int i;
@@ -37,20 +73,41 @@ int control_duplicados(char *argv[], int argc)
 	int j;
 
 	j = 0;
-    i = 1;
+    i = 0;
     n = 0;
-	while (i < argc - 1)
+	while (i < argc - 2)
     {
 		j = i +1;
-		while(j < argc)
+		while(j < argc -1)
 		{
-			n = control_duplicados2(argv[i], argv[j]);
-		
-    	    if (n == 0)
+			if (stack1[i] == stack1[j])
+			{
+				ft_printf("Error (numeros duplicados)");
 				return (0);
+			}
 			j++;
 		}
         i++;
     }
     return (1);
+}
+int	dimensiones_int(int argc, char *argv[])
+{
+	int i;
+	int b;
+
+	i = 1;
+	b = 1;
+
+	while(i < argc)
+	{
+		b = ft_atoi3(argv[i]);
+		if (b == 0)
+		{
+			ft_printf("Error\nNumero fuera rango INT o no es un numero\n");
+			return (0);
+		}
+		i++;
+	}
+	return(1);
 }
