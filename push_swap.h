@@ -17,17 +17,18 @@ typedef struct s_conteo
     int movimientos;
     int mejor_opcion;
     int num_max_b;
+    int pos_num;
 } t_conteo;
 
 int control_duplicados(int *stack1, int argc);
-int *alocacion_memoria(int argc, char *argv[]);
-int *alocacion_memoria2(int argc);
+int *alocacion_memoria(int size_a, char *argv[]);
+int *alocacion_memoria2(int size_a);
 int	ft_numero_minimo(int *stack_a, int argc);
 int control_numeros(int argc, char *argv[]);
 int	ft_atoi2(const char *nptr);
 int	ft_atoi3(const char *nptr);
 int	dimensiones_int(int argc, char *argv[]);
-void    base_push_swap(int *stack_a, int *stack_b, int argc, t_conteo *conteo);
+void    base_push_swap(int *stack_a, int *stack_b, int *stack_temp, t_conteo *conteo);
 void    sa(int *stack_a, int size_a);
 void    sb(int *stack_b, int size_b);
 void    ss(int *stack_a, int *stack_b, int size_a, int size_b);
@@ -85,7 +86,20 @@ int	numero_movimientos_min_1(t_conteo *conteo, int i, int k);
 void	mover_rr_min(int *stack_a, int *stack_b, t_conteo *conteo);
 void	mover_rrr_min(int *stack_a, int *stack_b, t_conteo *conteo);
 void	mover_rr_min_2(int *stack_a, int *stack_b, t_conteo *conteo);
-void	mover_rrr_mix_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rrr_min_2(int *stack_a, int *stack_b, t_conteo *conteo);
 void	mover_r_min(int *stack_a, int *stack_b, t_conteo *conteo);
 void	mover_r_min_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_minimo(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_maximo(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rr_max(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rr_max_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rrr_max(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rrr_max_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_r_max(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_r_max_2(int *stack_a, int *stack_b, t_conteo *conteo);
+int     numero_movimientos_num(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_num(int *stack_a, int *stack_b, t_conteo *conteo);
+void    copiar_stack_a(int *stack_a, int *stack_b, t_conteo *conteo);
+void	ordenar_stack_temp(int *stack_temp, t_conteo *conteo);
+
 #endif

@@ -5,14 +5,25 @@ void	posicionamiento(int *stack_a, int *stack_b, t_conteo *conteo)
 {
 	int	max;
 	int min;
+	int	num;
+
 	conteo->num_min = ft_numero_minimo(stack_a, conteo->size_a);
 	conteo->num_max_a = ft_numero_maximo(stack_a, conteo->size_a);
 	max = numero_movimientos_max(stack_a, stack_b, conteo);
 	min = numero_movimientos_min(stack_a, stack_b, conteo);
-	if (min < max)
+	num = numero_movimientos_num(stack_a, stack_b, conteo);
+	if (min < max && min < num)
 		mover_minimo(stack_a, stack_b, conteo);
-	//else
-	//	mover_maximo(stack_a, stack_b, conteo);
+	else if (max < min && max < num)
+		mover_maximo(stack_a, stack_b, conteo);
+	else if (num == min)
+		mover_num(stack_a, stack_b, conteo);
+	else if (max == min)
+		mover_maximo(stack_a, stack_b, conteo);
+	else if (num == max)
+		mover_num(stack_a, stack_b, conteo);
+	else if (num < max && num < min)
+		mover_num(stack_a, stack_b, conteo);
 	return;
 }
 

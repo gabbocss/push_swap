@@ -6,7 +6,7 @@
 #    By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 10:09:46 by inbauman          #+#    #+#              #
-#    Updated: 2025/05/12 16:10:40 by inbauman         ###   ########.fr        #
+#    Updated: 2025/05/15 19:20:35 by inbauman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,13 @@ SRC_FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_memset ft_
 ft_strlcpy ft_toupper ft_strlcat ft_tolower ft_strchr ft_strrchr ft_strncmp ft_memchr ft_memcmp ft_atoi ft_strnstr ft_calloc \
 ft_strdup ft_substr ft_strjoin ft_strtrim ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 ft_split get_next_line ft_printf ft_printf_funciones control push_swap memoria ft_atoi2 ft_atoi3 y_ahora_si_push_swap \
-movimientos_s movimientos_p movimientos_r control_minimo control_0_1 movimientos_rr posicionamiento \
-posicionamiento_min posicionamiento_max posicionamiento_2 inicializar_conteo argumentos borrar_impresion control_limites \
-posicionamiento_3
+movimientos_s movimientos_p movimientos_r control_minimo movimientos_rr inicializar_conteo borrar_impresion control_limites  nuevo_ps_0 \
+
 
 LIB_OBJECTS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_FILES)))
 
 CC = gcc
-CFLAGS = -I. -Ilibft
+CFLAGS = -g -I. -Ilibft
 
 all: $(OBJ_DIR) $(NAME) $(EXECUTABLE)
 

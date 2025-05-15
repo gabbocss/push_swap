@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inicializar_conteo.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inbauman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 14:58:45 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/12 14:58:48 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/15 15:29:13 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	inicializar_conteo(t_conteo *conteo)
 	conteo->movimientos = 0;
 	conteo->mejor_opcion = 0;
 	conteo->num_max_b = 0;
+	conteo->pos_num = 0;
 }

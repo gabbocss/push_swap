@@ -6,7 +6,7 @@
 /*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 15:23:37 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/12 14:39:53 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:49:34 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	mover_minimo(int *stack_a, int *stack_b, t_conteo *conteo)
 	int	k;
 
 	k = 0;
-	if (!(conteo->num_min > stack_b[0] && conteo->num_min < stack_b[conteo->size_b -1]))
+	if ((conteo->num_min > stack_b[0] && conteo->num_min < stack_b[conteo->size_b -1]))
 	{
 		k = 1;
-		while (!(stack_b[k] < conteo->num_min && stack_b[k -1] > conteo->num_min))
+		while (!(stack_b[k] > conteo->num_min && stack_b[k -1] < conteo->num_min))
 			k++;
 	}
 	if (conteo->pos_min == 1 && k <= conteo->size_b /2)
@@ -34,8 +34,8 @@ void	mover_minimo(int *stack_a, int *stack_b, t_conteo *conteo)
 
 void	mover_rr_min(int *stack_a, int *stack_b, t_conteo *conteo)
 {
-	if (stack_a[0] > stack_b[0] && stack_a[0] < stack_b[conteo->size_b -1]
-			&& stack_a[0] != conteo->num_min);
+	if ((stack_a[0] > stack_b[0] && stack_a[0] < stack_b[conteo->size_b -1])
+			&& stack_a[0] != conteo->num_min)
 			pb(stack_a, stack_b, conteo);
 	while (stack_a[0] != conteo->num_min && !(conteo->num_min > stack_b[0]
 		&& conteo->num_min < stack_b[conteo->size_b -1]))

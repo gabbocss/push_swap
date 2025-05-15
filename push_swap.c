@@ -6,7 +6,7 @@
 /*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:32:23 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/12 16:19:05 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/15 18:54:58 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ int	main(int argc, char *argv[])
 	int			control;
 	int			*stack_a;
 	int			*stack_b;
+	int			*stack_temp;
 	t_conteo	conteo;
-	char **args;
- 	int arg_count;
-
-	if (!preparar_argumentos(argc, argv, &args, &arg_count))
-		return (0);
-	limpiar_archivo_movimientos();
+	
 	control = 1;
 	inicializar_conteo(&conteo);
-	control = dimensiones_int(arg_count, args);
+	conteo.size_a = argc -1;
+	control = dimensiones_int(conteo.size_a, argv);
 	if (control == 0)
 		return (1);
-	stack_a = alocacion_memoria(arg_count, args);
-	stack_b = alocacion_memoria2(arg_count);
-	control = control_numeros(arg_count, args);
+	stack_a = alocacion_memoria(conteo.size_a, argv);
+	stack_b = alocacion_memoria2(conteo.size_a);
+	stack_temp = alocacion_memoria2(conteo.size_a);
+	control = control_numeros(conteo.size_a, argv);
 	if (control == 0)
 		return (1);
-	control = control_duplicados(stack_a, arg_count);
+	control = control_duplicados(stack_a, conteo.size_a);
 	if (control == 0)
 		return (1);
-	base_push_swap(stack_a, stack_b, arg_count, &conteo);
+	base_push_swap(stack_a, stack_b, stack_temp, &conteo);
+	//base_push_swap(stack_a, stack_b, &conteo, argc);
 	free(stack_a);
 	free(stack_b);
+	free(stack_temp);
 }

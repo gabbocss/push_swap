@@ -6,7 +6,7 @@
 /*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:28:46 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/12 17:18:06 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/15 18:30:32 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ int control_duplicados(int *stack1, int argc)
 {
 	
     int i;
-    int n;
+    //int n;
 	int j;
 
 	j = 0;
     i = 0;
-    n = 0;
+    //n = 0;
 	while (i < argc - 2)
     {
 		j = i +1;

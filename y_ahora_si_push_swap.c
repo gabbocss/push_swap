@@ -6,19 +6,57 @@
 /*   By: inbauman <inbauman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 15:26:53 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/12 20:47:34 by inbauman         ###   ########.fr       */
+/*   Updated: 2025/05/15 19:36:03 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-void	base_push_swap(int *stack_a, int *stack_b, int argc, t_conteo *conteo)
+void	base_push_swap(int *stack_a, int *stack_b, int *stack_temp, t_conteo *conteo)
+{
+	copiar_stack_a(stack_a, stack_temp, conteo);
+	ordenar_stack_temp(stack_temp, conteo);
+	indexar_stack_a(stack_a, stack_temp, conteo);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*void	base_push_swap(int *stack_a, int *stack_b, t_conteo *conteo, int argc)
 {
 	int	i;
 
 	i = 0;
-	conteo->size_a = argc;
+	conteo->size_a = argc -1;
 	conteo->size_b = 0;
 	// se inician aqui porque si el maximo esta entre los dos primeros numeros "posicionar_limites da error"
 	conteo->num_min = ft_numero_minimo(stack_a, conteo->size_a);
@@ -38,42 +76,42 @@ void	base_push_swap(int *stack_a, int *stack_b, int argc, t_conteo *conteo)
 	i = 0;
 	int min;
 	int pos;
-	conteo->num_max_a = ft_numero_maximo(stack_a, conteo->size_a);
+	
 	int a = stack_a[0];
 	int b = stack_a[1];
 	int c = stack_a[2];
 	if (conteo->size_a == 3)
 	{
-	if (a > b && b > c)
-	{
-		sa(stack_a, conteo->size_a);
-		rra(stack_a, conteo->size_a);
-	}
-	else if (a > c && c > b)
-		ra(stack_a, conteo->size_a);
-	else if (b > a && a > c)
-		rra(stack_a, conteo->size_a);
-	else if (b > c && c > a)
-		sa(stack_a, conteo->size_a);
-	else if (c > a && a > b)
-	{
-		sa(stack_a, conteo->size_a);
-		//ra(stack_a, conteo->size_a);
-	}
-	}
-	i = 0;
-	if (conteo->size_a == 2 && stack_a[0] > stack_a[1])
-	{
-		sa(stack_a, conteo->size_a);
-	}
-
-
+		int a = stack_a[0];
+		int b = stack_a[1];
+		int c = stack_a[2];
 	
+		if (a > b && b > c)
+		{
+			sa(stack_a, conteo->size_a);
+			rra(stack_a, conteo->size_a);
+		}
+		else if (a > c && c > b)
+			ra(stack_a, conteo->size_a);
+		else if (b > a && a > c)
+			rra(stack_a, conteo->size_a);
+		else if (b > c && c > a)
+		{
+			sa(stack_a, conteo->size_a);
+			ra(stack_a, conteo->size_a);
+		}
+		else if (c > a && a > b)
+		{
+			sa(stack_a, conteo->size_a);
+			ra(stack_a, conteo->size_a);
+		}
+	}
+	else if (conteo->size_a == 2 && stack_a[0] > stack_a[1])
+		sa(stack_a, conteo->size_a);	
 	if (conteo->size_a <= 10)
 	{
 	
 		conteo->num_min = ft_numero_minimo(stack_b, conteo->size_b);
-		
 		control_posicion_minimo(stack_b, conteo, conteo->size_b);
 		while (conteo->num_min != stack_b[conteo->size_b -1])
 		{
@@ -87,11 +125,9 @@ void	base_push_swap(int *stack_a, int *stack_b, int argc, t_conteo *conteo)
 			conteo->num_max_a = ft_numero_maximo(stack_a, conteo->size_a);
 			while(stack_b[0] < stack_a[conteo->size_a -1] && stack_a[conteo->size_a -1] != conteo->num_max_a)
 				rra(stack_a, conteo->size_a);
-			
 			pa(stack_a, stack_b, conteo);
 			
 		}
-			
 		guardar_stack_en_archivo(stack_a, conteo->size_a);
 			return;
 	}
@@ -145,6 +181,6 @@ void	posicionar_limites(int *stack_a, int *stack_b, t_conteo *conteo)
 		pb(stack_a, stack_b, conteo);
 	}
 		
-}
+}*/
 
 

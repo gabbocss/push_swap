@@ -32,7 +32,7 @@ void	mover_r_min_2(int *stack_a, int *stack_b, t_conteo *conteo)
 			&& stack_a[0] != conteo->num_min)
 			pb(stack_a, stack_b, conteo);
 	}
-		while (conteo->num_min > stack_b[0]
-			&& conteo->num_min < stack_b[conteo-> size_b -1])
+		while (!(conteo->num_min > stack_b[0]
+			&& conteo->num_min < stack_b[conteo-> size_b -1]))
 			rb(stack_b, conteo->size_b);
 }
