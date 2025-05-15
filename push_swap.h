@@ -76,4 +76,16 @@ int		preparar_argumentos(int argc, char **argv, char ***args, int *arg_count);
 void	free_split(char **split);
 int		contar_tokens(char **args);
 int		ft_atoi4(const char *nptr, int i);
+void imprimir_stacks(int *stack_a, int *stack_b, t_conteo *conteo);
+void limpiar_archivo_movimientos(void);
+int	check_limites_minimo(t_conteo *conteo, int *stack_b);
+int	check_limites_maximo(t_conteo *conteo, int *stack_b);
+int	numero_movimientos_max_1(t_conteo *conteo, int i, int k);
+int	numero_movimientos_min_1(t_conteo *conteo, int i, int k);
+void	mover_rr_min(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rrr_min(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rr_min_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_rrr_mix_2(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_r_min(int *stack_a, int *stack_b, t_conteo *conteo);
+void	mover_r_min_2(int *stack_a, int *stack_b, t_conteo *conteo);
 #endif

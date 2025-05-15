@@ -16,6 +16,7 @@ void    ra(int *stack_a, int size_a)
         n++;
     }
     stack_a[size_a -1] = temp;
+
     ft_printf("ra\n");
 }
 
@@ -34,6 +35,7 @@ void    rb(int *stack_b, int size_b)
         n++;
     }
     stack_b[size_b -1] = temp;
+	
     ft_printf("rb\n");
 }
 void    rr(int *stack_a, int *stack_b, int size_a, int size_b)
@@ -57,5 +59,6 @@ void    rr(int *stack_a, int *stack_b, int size_a, int size_b)
         n++;
     }
     stack_b[size_b -1] = temp;
+	//imprimir_stacks(stack_a, stack_b, conteo);
     ft_printf("rr\n");
 }

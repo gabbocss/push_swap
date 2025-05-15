@@ -14,6 +14,7 @@ void    rra(int *stack_a, int size_a)
 		i--;
 	}
 	stack_a[0] = temp;
+
 	ft_printf("rra\n");
 }
 
@@ -30,6 +31,7 @@ void	rrb(int *stack_b, int size_b)
 		i--;
 	}
 	stack_b[0] = temp;
+
 	ft_printf("rrb\n");
 }
 void	rrr(int *stack_a, int *stack_b, t_conteo *conteo)
@@ -53,5 +55,6 @@ void	rrr(int *stack_a, int *stack_b, t_conteo *conteo)
 		i--;
 	}
 	stack_b[0] = temp;
+	imprimir_stacks(stack_a, stack_b, conteo);
 	ft_printf("rrr\n");
 }
