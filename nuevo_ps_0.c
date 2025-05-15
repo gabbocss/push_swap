@@ -32,3 +32,20 @@ void	ordenar_stack_temp(int *stack_temp, t_conteo *conteo)
 		i++;
 	}	
 }
+
+void	indexar_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (i < conteo->size_a)
+	{
+		while (stack_a[i] != stack_temp[j])
+			j++;
+		stack_a[i] = j;
+		j = 0;
+		i++;
+	}
+}

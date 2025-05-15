@@ -101,5 +101,6 @@ int     numero_movimientos_num(int *stack_a, int *stack_b, t_conteo *conteo);
 void	mover_num(int *stack_a, int *stack_b, t_conteo *conteo);
 void    copiar_stack_a(int *stack_a, int *stack_b, t_conteo *conteo);
 void	ordenar_stack_temp(int *stack_temp, t_conteo *conteo);
+void	indexar_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo);
 
 #endif
