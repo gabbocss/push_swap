@@ -25,7 +25,8 @@ ft_strlcpy ft_toupper ft_strlcat ft_tolower ft_strchr ft_strrchr ft_strncmp ft_m
 ft_strdup ft_substr ft_strjoin ft_strtrim ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 ft_split get_next_line ft_printf ft_printf_funciones control push_swap memoria ft_atoi2 ft_atoi3 y_ahora_si_push_swap \
 movimientos_s movimientos_p movimientos_r control_minimo control_0_1 movimientos_rr posicionamiento \
-posicionamiento_min posicionamiento_max posicionamiento_2 inicializar_conteo argumentos
+posicionamiento_min posicionamiento_max posicionamiento_2 inicializar_conteo argumentos borrar_impresion control_limites \
+posicionamiento_3
 
 LIB_OBJECTS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_FILES)))
 

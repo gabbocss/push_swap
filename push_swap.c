@@ -43,6 +43,7 @@ int	main(int argc, char *argv[])
 
 	if (!preparar_argumentos(argc, argv, &args, &arg_count))
 		return (0);
+	limpiar_archivo_movimientos();
 	control = 1;
 	inicializar_conteo(&conteo);
 	control = dimensiones_int(arg_count, args);
