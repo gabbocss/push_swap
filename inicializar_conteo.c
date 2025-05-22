@@ -29,4 +29,6 @@ void	inicializar_conteo(t_conteo *conteo)
 	conteo->mejor_opcion = 0;
 	conteo->num_max_b = 0;
 	conteo->pos_num = 0;
+	conteo->num_bits = 0;
+	conteo->check = 0;
 }

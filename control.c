@@ -75,14 +75,14 @@ int control_duplicados(int *stack1, int argc)
 	j = 0;
     i = 0;
     //n = 0;
-	while (i < argc - 2)
+	while (i < argc - 1)
     {
 		j = i +1;
-		while(j < argc -1)
+		while(j < argc)
 		{
 			if (stack1[i] == stack1[j])
 			{
-				ft_printf("Error (numeros duplicados)");
+				ft_printf("Error");
 				return (0);
 			}
 			j++;
@@ -99,12 +99,12 @@ int	dimensiones_int(int argc, char *argv[])
 	i = 1;
 	b = 1;
 
-	while(i < argc)
+	while(i <= argc)
 	{
 		b = ft_atoi3(argv[i]);
 		if (b == 0)
 		{
-			ft_printf("Error\nNumero fuera rango INT o no es un numero\n");
+			ft_printf("Error\n");
 			return (0);
 		}
 		i++;

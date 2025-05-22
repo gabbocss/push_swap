@@ -39,7 +39,6 @@ void	pa(int *stack_a, int *stack_b, t_conteo *conteo)
 		recolocacion_stack(stack_b, conteo->size_b);
 	conteo->size_b--;
 	int i = 0;
-	imprimir_stacks(stack_a, stack_b, conteo);
 	ft_printf("pa\n");
 }
 
@@ -53,9 +52,8 @@ void	pb(int *stack_a, int *stack_b, t_conteo *conteo)
 	if (conteo->size_a >= 1)
 		recolocacion_stack(stack_a, conteo->size_a);
 	conteo->size_a--;
-	if (conteo->size_b == 2 && stack_b[0] < stack_b[1])
-		sb(stack_b, conteo->size_b);
-	imprimir_stacks(stack_a, stack_b, conteo);
+	/*if (conteo->size_b == 2 && stack_b[0] < stack_b[1])
+		sb(stack_b, conteo->size_b);*/
 	ft_printf("pb\n");
 }
 

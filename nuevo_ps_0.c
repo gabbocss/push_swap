@@ -49,3 +49,36 @@ void	indexar_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo)
 		i++;
 	}
 }
+
+void	calcular_bits(int *stack_temp, t_conteo *conteo)
+{
+	int	num_max;
+	
+	num_max = conteo->size_a -1;
+	while ((num_max >> (conteo->num_bits)) != 0)
+		conteo->num_bits++;
+}
+
+void	radix_sort(int *stack_a, int *stack_b, t_conteo *conteo)
+{
+	int	j;
+	int	max;
+	int	grupo;
+
+	grupo = 0;
+	j = 0;
+	max = conteo->size_a;
+	while (j < max)
+	{
+		grupo = (stack_a[0] >> conteo->pivote) & 1;
+		if (grupo == 0)
+			pb(stack_a, stack_b, conteo);
+		else
+			ra(stack_a, conteo->size_a);
+		j++;
+	}
+	while (conteo->size_b > 0)
+		pa(stack_a, stack_b, conteo);
+	conteo->pivote++;
+	conteo->check = check(stack_a, conteo);
+}

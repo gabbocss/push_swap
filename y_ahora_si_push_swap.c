@@ -18,7 +18,33 @@ void	base_push_swap(int *stack_a, int *stack_b, int *stack_temp, t_conteo *conte
 	copiar_stack_a(stack_a, stack_temp, conteo);
 	ordenar_stack_temp(stack_temp, conteo);
 	indexar_stack_a(stack_a, stack_temp, conteo);
+	calcular_bits(stack_temp, conteo);
+ 	while (conteo->pivote < conteo->num_bits && !check(stack_a, conteo))
+		radix_sort(stack_a, stack_b, conteo);
+	//guardar_stack_en_archivo(stack_a, conteo->size_a);
+	/*int i = 0;
+	while (i < conteo->size_a)
+	{
+		ft_printf("stack_a[%i] == %i\n", i, stack_a[i]);
+		i++;
+	}*/
+
 }
+
+int	is_sorted(int *stack_a, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (stack_a[i] > stack_a[i + 1])
+			return (0); // No está ordenado
+		i++;
+	}
+	return (1); // Sí está ordenado
+}
+
 
 
 

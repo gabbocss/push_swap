@@ -18,6 +18,8 @@ typedef struct s_conteo
     int mejor_opcion;
     int num_max_b;
     int pos_num;
+	int	num_bits;
+	int	check;
 } t_conteo;
 
 int control_duplicados(int *stack1, int argc);
@@ -102,5 +104,11 @@ void	mover_num(int *stack_a, int *stack_b, t_conteo *conteo);
 void    copiar_stack_a(int *stack_a, int *stack_b, t_conteo *conteo);
 void	ordenar_stack_temp(int *stack_temp, t_conteo *conteo);
 void	indexar_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo);
+void	calcular_bits(int *stack_temp, t_conteo *conteo);
+void	radix_sort(int *stack_a, int *stack_b, t_conteo *conteo);
+int	is_sorted(int *stack_a, int size);
+int	check(int *stack_a, t_conteo *conteo);
+void	devolver_numeros(int *stack_a, int *stack_b, t_conteo *conteo);
+void quick_sort(int *stack_a, int *stack_b, t_conteo *conteo);
 
 #endif
