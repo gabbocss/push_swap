@@ -20,25 +20,23 @@ int	main(int argc, char *argv[])
 	int			*stack_b;
 	int			*stack_temp;
 	t_conteo	conteo;
-	if (argc <=2)
+
+	if (argc <= 2)
 		return (1);
 	control = 1;
 	inicializar_conteo(&conteo);
 	conteo.size_a = argc -1;
-	control = dimensiones_int(conteo.size_a, argv);
+	control = llamadas_control_0(&conteo, argv);
 	if (control == 0)
 		return (1);
 	stack_a = alocacion_memoria(conteo.size_a, argv);
 	stack_b = alocacion_memoria2(conteo.size_a);
 	stack_temp = alocacion_memoria2(conteo.size_a);
-	control = control_numeros(conteo.size_a, argv);
+	control = llamadas_control_1(stack_a, &conteo);
 	if (control == 0)
+	{
+		liberar_memoria(stack_a, stack_b, stack_temp);
 		return (1);
-	control = control_duplicados(stack_a, conteo.size_a);
-	if (control == 0)
-		return (1);
+	}
 	base_push_swap(stack_a, stack_b, stack_temp, &conteo);
-	free(stack_a);
-	free(stack_b);
-	free(stack_temp);
 }

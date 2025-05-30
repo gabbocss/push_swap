@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nuevo_ps_0.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inbauman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/29 17:22:43 by inbauman          #+#    #+#             */
+/*   Updated: 2025/05/29 17:22:44 by inbauman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
@@ -20,7 +32,7 @@ void	ordenar_stack_temp(int *stack_temp, t_conteo *conteo)
 
 	i = 0;
 	j = 0;
-	while(i < conteo->size_a -1)
+	while (i < conteo->size_a -1)
 	{
 		if (stack_temp[i +1] < stack_temp[i])
 		{
@@ -50,10 +62,10 @@ void	indexar_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo)
 	}
 }
 
-void	calcular_bits(int *stack_temp, t_conteo *conteo)
+void	calcular_bits(t_conteo *conteo)
 {
 	int	num_max;
-	
+
 	num_max = conteo->size_a -1;
 	while ((num_max >> (conteo->num_bits)) != 0)
 		conteo->num_bits++;

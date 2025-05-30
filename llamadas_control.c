@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nuevo_ps_1.c                                       :+:      :+:    :+:   */
+/*   llamadas_control.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inbauman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/29 17:24:18 by inbauman          #+#    #+#             */
-/*   Updated: 2025/05/29 17:24:20 by inbauman         ###   ########.fr       */
+/*   Created: 2025/05/30 16:33:49 by inbauman          #+#    #+#             */
+/*   Updated: 2025/05/30 16:33:51 by inbauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	check(int *stack_a, t_conteo *conteo)
+int	llamadas_control_0(t_conteo *conteo, char *argv[])
 {
-	int	i;
+	int	control;
 
-	i = 0;
-	while (i < conteo->size_a -1)
-	{
-		if (stack_a[i] > stack_a[i +1])
-			return (0);
-		i++;
-	}
+	control = 0;
+	control = dimensiones_int(conteo->size_a, argv);
+	if (control == 0)
+		return (0);
+	control = control_numeros(conteo->size_a, argv);
+	if (control == 0)
+		return (0);
 	return (1);
 }
 
-void	devolver_stack_a(int *stack_a, int *stack_temp, t_conteo *conteo)
+int	llamadas_control_1(int *stack_a, t_conteo *conteo)
 {
-	int	i;
+	int	control;
 
-	i = 0;
-	while (i < conteo->size_a)
+	control = 0;
+	control = control_duplicados(stack_a, conteo->size_a);
+	if (control == 0)
 	{
-		stack_a[i] = stack_temp[i];
-		i++;
+		return (0);
 	}
+	return (1);
 }

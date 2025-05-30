@@ -26,8 +26,8 @@
 # include <stdlib.h>
 # include <stdint.h> 
 # include <stdarg.h>
-#include <limits.h>
- 
+# include <limits.h>
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -64,13 +64,13 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*get_next_line2(char **linea, int bytes_leidos);
 char	*get_next_line(int fd);
-int	ft_printf_control(char copia, va_list args);
-int	ft_printf(char const *linea, ...);
-int	ft_printf_puthex(unsigned long long p);
-int	ft_printf_putstr(char *s);
-int	ft_printf_numero_hex(unsigned int num, char c);
-int	ft_printf_putnbr(long long num);
-int	ft_printf_numeros_dos_cifras(long long num);
-int	ft_putchar(char c);
+int		ft_printf_control(char copia, va_list args);
+int		ft_printf(char const *linea, ...);
+int		ft_printf_puthex(unsigned long long p);
+int		ft_printf_putstr(char *s);
+int		ft_printf_numero_hex(unsigned int num, char c);
+int		ft_printf_putnbr(long long num);
+int		ft_printf_numeros_dos_cifras(long long num);
+int		ft_putchar(char c);
 
 #endif

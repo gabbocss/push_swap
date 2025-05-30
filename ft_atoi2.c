@@ -13,14 +13,6 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static int	signo(const char *nptr, int i)
-{
-	if (nptr[i] == '-')
-		return (-1);
-	else
-		return (1);
-}
-
 /*static int	calculas_numero(const char *nptr, int i)
 {
 	int		numero;
@@ -43,13 +35,12 @@ int	ft_atoi2(const char *nptr)
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
 		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
-	if (!(nptr[i] == '-' || nptr[i] == '+' || (nptr[i] >= '0' 
-		&& nptr[i] <= '9')))
-    	return (0);
+	if (!(nptr[i] == '-' || nptr[i] == '+' || (nptr[i] >= '0'
+				&& nptr[i] <= '9')))
+		return (0);
 	if (nptr[i] == '-' || nptr[i] == '+')
 		i++;
 	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
 		return (0);
-	
 	return (1);
 }
