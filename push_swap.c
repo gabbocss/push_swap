@@ -21,13 +21,14 @@ int	main(int argc, char *argv[])
 	int			*stack_temp;
 	t_conteo	conteo;
 
-	if (argc <= 2)
-		return (1);
-	control = 1;
-	inicializar_conteo(&conteo);
-	conteo.size_a = argc -1;
-	control = llamadas_control_0(&conteo, argv);
+		control = 1;
+		inicializar_conteo(&conteo);
+		conteo.size_a = argc -1;
+	if (argc > 1)
+		control = llamadas_control_0(&conteo, argv);
 	if (control == 0)
+		return (1);
+	if (argc <= 2)
 		return (1);
 	stack_a = alocacion_memoria(conteo.size_a, argv);
 	stack_b = alocacion_memoria2(conteo.size_a);

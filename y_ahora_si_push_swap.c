@@ -57,21 +57,10 @@ void	tres_numeros(int *stack_a, t_conteo *conteo)
 
 void	cinco_numeros(int *stack_a, int *stack_b, t_conteo *conteo)
 {
-	conteo->num_min = ft_numero_minimo(stack_a, conteo);
-	control_posicion_minimo(stack_a, conteo, conteo->size_a);
-	if (conteo->num_min == 1)
-		while (conteo->num_min != stack_a[0])
-			ra(stack_a, conteo->size_a);
-	else
-		while (conteo->num_min != stack_a[0])
-			rra(stack_a, conteo->size_a);
-	pb(stack_a, stack_b, conteo);
-	if (conteo->size_a > 3)
-		cinco_numeros(stack_a, stack_b, conteo);
-	if (conteo->size_a == 3)
-		tres_numeros(stack_a, conteo);
-	if (conteo->size_b > 0)
-		pa(stack_a, stack_b, conteo);
+	while(conteo->size_b > 3)
+		pb(stack_a, stack_b, conteo);
+	tres_numeros(stack_a, conteo);
+	devolver_b(stack_a, stack_b, conteo);
 }
 
 int	ft_numero_minimo(int *stack_a, t_conteo *conteo)
@@ -89,3 +78,8 @@ int	ft_numero_minimo(int *stack_a, t_conteo *conteo)
 	}
 	return (min);
 }
+void	devolver_b(int *stack_a, int *stack_b, t_conteo *conteo)
+{
+	
+}
+
