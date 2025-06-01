@@ -20,6 +20,11 @@ void	base_push_swap(int *stack_a, int *stack_b, int *stack_temp,
 	{
 		if (conteo->size_a == 3)
 			tres_numeros(stack_a, conteo);
+		else if (conteo->size_a == 2)
+		{
+			if (stack_a[0] > stack_a[1])
+				sa(stack_a, conteo->size_a);
+		}
 		else if (conteo->size_a == 4 || conteo->size_a == 5)
 			cinco_numeros(stack_a, stack_b, conteo);
 	}
