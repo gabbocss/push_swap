@@ -94,5 +94,3 @@ int	ft_numero_minimo(int *stack_a, t_conteo *conteo)
 	}
 	return (min);
 }
-
-

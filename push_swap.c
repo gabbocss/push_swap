@@ -21,9 +21,9 @@ int	main(int argc, char *argv[])
 	int			*stack_temp;
 	t_conteo	conteo;
 
-		control = 1;
-		inicializar_conteo(&conteo);
-		conteo.size_a = argc -1;
+	control = 1;
+	inicializar_conteo(&conteo);
+	conteo.size_a = argc -1;
 	if (argc > 1)
 		control = llamadas_control_0(&conteo, argv);
 	if (control == 0)
